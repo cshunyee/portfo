@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, Response
 import csv
+import os
 
 app = Flask(__name__)
 
@@ -21,7 +22,8 @@ def write_to_file(data):
 
 
 def write_to_csv(data):
-    with open('database.csv', mode='a') as database2:
+    path = os.getcwd()
+    with open(f'{path}/database.csv', mode='a') as database2:
         email = data['email']
         subject = data['subject']
         message = data['message']
