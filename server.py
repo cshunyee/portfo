@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, Response
 import csv
 
 app = Flask(__name__)
@@ -33,11 +33,10 @@ def write_to_csv(data):
 def submit_form():
     if request.method == 'POST':
         try:
-            data = request.form.to_dict()
-            write_to_csv(data)
-            return redirect('/thankyou')
+            form = request.get_json()
+            write_to_csv(form)
+            return Response(status=201)
         except:
-            return 'Did not save to database'
+            return Response(status=400)
     else:
-        return 'Something went wrong'
-
+        return Response(status=500)
