@@ -23,6 +23,7 @@ def write_to_file(data):
 
 def write_to_csv(data):
     path = os.getcwd()
+    print(path)
     with open(f'{path}/database.csv', mode='a') as database2:
         email = data['email']
         subject = data['subject']

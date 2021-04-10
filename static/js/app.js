@@ -4,13 +4,13 @@ var app = angular.module('PortfoApp', ["ngRoute"]).config(function ($routeProvid
     templateUrl: "/home",
     controller: "homeCtrl"
   })
-  .when("/works", {
-    templateUrl: "/works",
-    controller: "worksCtrl"
+  .when("/projects", {
+    templateUrl: "/projects",
+    controller: "projectsCtrl"
   })
-  .when("/work", {
-    templateUrl: "/work",
-    controller: "wokrCtrl"
+  .when("/travel", {
+    templateUrl: "/travel",
+    controller: "travelCtrl"
   })
   .when("/about", {
     templateUrl: "/about",
@@ -33,12 +33,12 @@ app.controller("homeCtrl", function ($scope, $http) {
     $("#footer").hide();
 })
 
-app.controller("worksCtrl", function ($scope, $http) {
+app.controller("projectsCtrl", function ($scope, $http) {
   navActivePage();
   refresh();
 })
 
-app.controller("workCtrl", function ($scope, $http) {
+app.controller("travelCtrl", function ($scope, $http) {
   navActivePage();
   refresh();
 })

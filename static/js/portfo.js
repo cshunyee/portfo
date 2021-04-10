@@ -3,7 +3,7 @@ $(document).on('click', 'a', function() {
   $("#navbar").find('.active').removeClass('active')
   $(this).addClass('active');
   if ($(this).closest('ul').attr('id') == 'worksNav') {
-    $('a[href*="#!works"]').addClass('active')
+    $('a[href*="#!projects"]').addClass('active')
   }
 
   // Switch navbar class
@@ -17,9 +17,9 @@ $(document).on('click', 'a', function() {
 
   // Toggle sub-navbar
   if ($(this).attr('href') == '#!work' || $(this).attr('href') == '#!works') {
-    $('#worksNav').find('li').show();
+    $('#projectsNav').find('li').show();
   } else {
-    $('#worksNav').find('li').hide();
+    $('#projectsNav').find('li').hide();
   }
 })
 
@@ -45,10 +45,10 @@ function refresh() {
     }
 
     // Toggle sub-navbar
-    if (`#!${currentPage}` == '#!work' || `#!${currentPage}` == '#!works') {
-      $('#worksNav').find('li').show();
+    if (`#!${currentPage}` == '#!travel' || `#!${currentPage}` == '#!projects') {
+      $('#projectsNav').find('li').show();
     } else {
-      $('#worksNav').find('li').hide();
+      $('#projectsNav').find('li').hide();
     }
   })
 }
