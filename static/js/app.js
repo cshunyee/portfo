@@ -9,8 +9,16 @@ var app = angular.module('PortfoApp', ["ngRoute"]).config(function ($routeProvid
     controller: "projectsCtrl"
   })
   .when("/travel", {
-    templateUrl: "/travel",
+    templateUrl: "/projects/travel",
     controller: "travelCtrl"
+  })
+  .when("/website-template", {
+    templateUrl: "/projects/website-template",
+    controller: "websiteTemplateCtrl"
+  })
+  .when("/video-collection", {
+    templateUrl: "/projects/video-collection",
+    controller: "videoCollectionCtrl"
   })
   .when("/about", {
     templateUrl: "/about",
@@ -39,6 +47,16 @@ app.controller("projectsCtrl", function ($scope, $http) {
 })
 
 app.controller("travelCtrl", function ($scope, $http) {
+  navActivePage();
+  refresh();
+})
+
+app.controller("websiteTemplateCtrl", function ($scope, $http) {
+  navActivePage();
+  refresh();
+})
+
+app.controller("videoCollectionCtrl", function ($scope, $http) {
   navActivePage();
   refresh();
 })

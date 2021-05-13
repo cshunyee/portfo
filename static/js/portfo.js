@@ -1,3 +1,5 @@
+const projectList = ['#!projects', '#!travel', '#!website-template', '#!video-collection']
+
 $(document).on('click', 'a', function() {
   // Activate navbar
   $("#navbar").find('.active').removeClass('active')
@@ -16,7 +18,7 @@ $(document).on('click', 'a', function() {
   }
 
   // Toggle sub-navbar
-  if ($(this).attr('href') == '#!work' || $(this).attr('href') == '#!works') {
+  if (projectList.includes($(this).attr('href'))) {
     $('#projectsNav').find('li').show();
   } else {
     $('#projectsNav').find('li').hide();
@@ -45,7 +47,7 @@ function refresh() {
     }
 
     // Toggle sub-navbar
-    if (`#!${currentPage}` == '#!travel' || `#!${currentPage}` == '#!projects') {
+    if (projectList.includes(`#!${currentPage}`)) {
       $('#projectsNav').find('li').show();
     } else {
       $('#projectsNav').find('li').hide();

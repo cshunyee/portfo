@@ -12,6 +12,10 @@ def home():
 def html_page(page_name=None):
     return render_template(f'{page_name}.html')
 
+@app.route('/projects/<string:page_name>')
+def projects_page(page_name=None):
+    return render_template(f'projects/{page_name}.html')
+
 
 def write_to_file(data):
     with open('database.txt', mode='a') as database:
